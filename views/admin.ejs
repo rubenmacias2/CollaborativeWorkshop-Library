@@ -1,23 +1,64 @@
-<%- include('header.ejs') %>
-    <title>Libros </title>
+<%- include('./componets/header.ejs') %>
+    <title>Libros
+        <%- title %>
+    </title>
     </head>
 
     <body>
-        <nav class="navbar navbar-light navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand">Administrador</a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-        </nav><br><br><br>
+        <%- include('./componets/navBar.ejs')%>
 
-        <div class="container-fluid">
-            <h2>hola</h2>
-        </div>
+            <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
+                <form>
+                    <h3>Registro de libros</h3>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Nombre del Libro</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="" placeholder="Eje: Cien Años de soledad">
+                        </div>
+                        <label for="" class="col-sm-1 col-form-label">Autor</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="" placeholder="Gabriel Garcia Marquez">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-1 col-form-label">Editorial</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="" placeholder="Eje: Sudamericana">
+                        </div>
+                        <label for="" class="col-sm-1 col-form-label">Fecha</label>
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control" id="" placeholder="Eje..">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Registrar</button>
+                </form><br>
+            </div>
+            <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
+                <br>
+                <h3>Libros Registrados</h3><br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+
+                    </tbody>
+                </table><br>
+
+
+            </div>
 
     </body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
-    </html>
+    <%- include('./componets/endHeader.ejs') %>
