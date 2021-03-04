@@ -1,7 +1,12 @@
 const express = require('express');
+const { route } = require('./library');
 const router = express.Router();
 
 const books = []
+
+router.get('/add-book', (req, res) => {
+    res.render('admin', {title: 'Biblioteca'})
+})
 
 router.post('/add-book', (req, res) => {
     books.push({
@@ -19,6 +24,6 @@ router.post('/add-book', (req, res) => {
 
 router.get('/', (req, res) => {
     res.render('admin', { title: "Biblioteca" })
-})
+});
 
 module.exports = router;
