@@ -5,128 +5,133 @@
     </head>
 
     <body>
-        <%- include('./componets/navBar.ejs')%>
-
-            <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
-                <form>
-                    <h3>Registro de libros</h3>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">Nombre del Libro</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="" placeholder="Eje: Cien Años de soledad">
+        <main>
+            <%- include('./componets/navBar.ejs')%>
+                <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
+                    <form method="POST" action="/add-book">
+                        <div>
+                            <h3>Registro de libros</h3>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-2 col-form-label">Nombre del Libro</label>
+                                <div name="test" class="col-sm-4">
+                                    <input type="text" name="title" class="form-control"
+                                        placeholder="Eje: Cien Años de soledad">
+                                </div>
+                                <label for="" class="col-sm-1 col-form-label">Autor</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="author" class="form-control"
+                                        placeholder="Gabriel Garcia Marquez">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-1 col-form-label">Editorial</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="editorial" class="form-control"
+                                        placeholder="Eje: Sudamericana">
+                                </div>
+                                <label for="" class="col-sm-1 col-form-label">Fecha</label>
+                                <div class="col-sm-3">
+                                    <input type="date" name="date" class="form-control" placeholder="Eje..">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-1 col-form-label">Costo</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="value" class="form-control" id="" placeholder="10000$">
+                                </div>
+                                <label for="" class="col-sm-1 col-form-label">unidades</label>
+                                <div class="col-sm-3">
+                                    <input type="number" name="quantity" class="form-control" id="">
+                                </div>
+                            </div>
                         </div>
-                        <label for="" class="col-sm-1 col-form-label">Autor</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="" placeholder="Gabriel Garcia Marquez">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-1 col-form-label">Editorial</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="" placeholder="Eje: Sudamericana">
-                        </div>
-                        <label for="" class="col-sm-1 col-form-label">Fecha</label>
-                        <div class="col-sm-3">
-                            <input type="date" class="form-control" id="" placeholder="Eje..">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-1 col-form-label">Costo</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="" placeholder="10000$">
-                        </div>
-                        <label for="" class="col-sm-1 col-form-label">unidades</label>
-                        <div class="col-sm-3">
-                            <input type="number" class="form-control" id="">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-outline-success">Registrar</button>
-                </form><br>
-            </div>
-            <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;"><br>
-                <form>
-                    <h3>Registro de Usuario</h3>
-
-                    <button type="submit" class="btn btn-outline-success">Registrar</button>
-                </form><br>
-            </div>
-            <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
-                <br>
-                <h3>Usuarios Registrados</h3><br>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-
-                    </tbody>
-                </table><br>
-
-
-            </div>
-            <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
-                <br>
-                <h3>Libros Del Usuario</h3><br>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-
-                    </tbody>
-                </table><br>
-
-
-            </div>
-            <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
-                <br>
-                <h3>Libros Registrados</h3><br>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-
-                    </tbody>
-                </table><br>
-
-
-            </div>
-
-
+                        <button type="submit" class="btn btn-outline-success">Registrar</button>
+                    </form><br>
+                </div>
+                <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;"><br>
+                    <form>
+                        <h3>Registro de Usuario</h3>
+    
+                        <button type="submit" class="btn btn-outline-success">Registrar</button>
+                    </form><br>
+                </div>
+                <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
+                    <br>
+                    <h3>Usuarios Registrados</h3><br>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+    
+                        </tbody>
+                    </table><br>
+    
+    
+                </div>
+                <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
+                    <br>
+                    <h3>Libros Del Usuario</h3><br>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+    
+                        </tbody>
+                    </table><br>
+    
+    
+                </div>
+                <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
+                    <br>
+                    <h3>Libros Registrados</h3><br>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+    
+                        </tbody>
+                    </table><br>
+    
+    
+                </div>
+    
+        </main>
     </body>
-
+    
     <%- include('./componets/endHeader.ejs') %>
