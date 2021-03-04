@@ -3,14 +3,15 @@ const app = express();
 const port = 3500;
 const path = require('path');
 
-const indexRouter = require('./routes/administrator.js');
-
+const indexRouter = require('./routes/administrator');
+const shop = require('./routes/library');
 //PRUEBA
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use('/', indexRouter);
+app.use('/admin', indexRouter);
+app.use('/', shop);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
