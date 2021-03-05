@@ -1,5 +1,5 @@
 <%- include('./componets/header.ejs') %>
-    <title>Libros
+    <title>
         <%- title %>
     </title>
     </head>
@@ -38,7 +38,7 @@
                                 </div>
                                 <label for="" class="col-sm-1 col-form-label">unidades</label>
                                 <div class="col-sm-3">
-                                    <input type="number" name="quantity" class="form-control" id="">
+                                    <input type="number" name="quantity" min="1" pattern="^[0-9]+" class="form-control" id="">
                                 </div>
                             </div>
                         </div>

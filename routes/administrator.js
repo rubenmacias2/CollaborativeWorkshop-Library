@@ -2,10 +2,10 @@ const express = require('express');
 const { route } = require('./library');
 const router = express.Router();
 
-const books = []
+const books = [];
 
 router.get('/add-book', (req, res) => {
-    res.render('admin', { title: 'Biblioteca' })
+    res.render('admin', { title: 'Administrador Biblioteca' })
 })
 
 router.post('/add-book', (req, res) => {
