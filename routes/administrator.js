@@ -5,7 +5,7 @@ const router = express.Router();
 const books = [];
 
 router.get('/add-book', (req, res) => {
-    res.render('admin', { title: 'Administrador Biblioteca' })
+    res.render('admin', { books: books })
 })
 
 router.post('/add-book', (req, res) => {
@@ -20,11 +20,11 @@ router.post('/add-book', (req, res) => {
     })
 
     console.log(books)
-    res.redirect('/')
+    res.redirect('/admin')
 })
 
 router.get('/', (req, res) => {
-    res.render('admin', { title: "Biblioteca" })
+    res.render('admin', { title: "Administrador Biblioteca", books: books })
 });
 
 module.exports.books = books;

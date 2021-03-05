@@ -12,33 +12,33 @@
                         <div>
                             <h3>Registro de libros</h3>
                             <div class="form-group row">
-                                <label for="" class="col-sm-2 col-form-label">Nombre del Libro</label>
+                                <label for="" class="col-sm-2 col-form-label is-invalid">Nombre del Libro</label>
                                 <div name="test" class="col-sm-4">
-                                    <input type="text" name="title" class="form-control" placeholder="Eje: Cien Años de soledad">
+                                    <input type="text" name="title" required class="form-control" placeholder="Eje: Cien Años de soledad">
                                 </div>
                                 <label for="" class="col-sm-1 col-form-label">Autor</label>
                                 <div class="col-sm-4">
-                                    <input type="text" name="author" class="form-control" placeholder="Gabriel Garcia Marquez">
+                                    <input type="text" name="author" required class="form-control" placeholder="Gabriel Garcia Marquez">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-sm-1 col-form-label">Editorial</label>
                                 <div class="col-sm-4">
-                                    <input type="text" name="editorial" class="form-control" placeholder="Eje: Sudamericana">
+                                    <input type="text" name="editorial" required class="form-control" placeholder="Eje: Sudamericana">
                                 </div>
                                 <label for="" class="col-sm-1 col-form-label">Fecha</label>
                                 <div class="col-sm-3">
-                                    <input type="date" name="date" class="form-control" placeholder="Eje..">
+                                    <input type="date" name="date" required class="form-control" placeholder="Eje..">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-sm-1 col-form-label">Costo</label>
                                 <div class="col-sm-3">
-                                    <input type="text" name="value" class="form-control" id="" placeholder="10000$">
+                                    <input type="text" name="value" required class="form-control" id="" placeholder="10000$">
                                 </div>
                                 <label for="" class="col-sm-1 col-form-label">unidades</label>
                                 <div class="col-sm-3">
-                                    <input type="number" name="quantity" min="1" pattern="^[0-9]+" class="form-control" id="">
+                                    <input type="number" name="quantity" required min="1" pattern="^[0-9]+" class="form-control" id="">
                                 </div>
                             </div>
                         </div>
@@ -144,19 +144,44 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Titulo</th>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Editorial</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Costo</th>
+                                <th scope="col">Unidades</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
+                            <%for (const it of books) {%>
+                                <tr>
+                                    <th>
+                                        <a>
+                                            <%= it.title%>
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a>
+                                            <%= it.author%>
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a>
+                                            <%= it.editorial%>
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <%= it.date%>
+                                    </th>
+                                    <th>
+                                        <%= it.value%>
+                                    </th>
+                                    <th>
+                                        <%= it.quantity%>
+                                    </th>
+                                </tr>
+                                <%}%>
+
 
                         </tbody>
                     </table><br>
