@@ -10,6 +10,7 @@ router.get('/add-book', (req, res) => {
 
 router.post('/add-book', (req, res) => {
     books.push({
+        isbn: req.body.isbn,
         title: req.body.title,
         author: req.body.author,
         editorial: req.body.editorial,
@@ -27,5 +28,19 @@ router.get('/', (req, res) => {
     res.render('admin', { title: "Biblioteca" })
 });
 
-module.exports.books = books;
+function buscarLibro(isbn){
+    for(i = 0;i<books.length;i++){
+        if(books[i].isbn == isbn || books[i].title == isbn){
+            return books[i];
+        }
+    }
+    return null;
+}
+
+///module.exports.books = books;
+module.exports = {
+    books: books,
+    buscarLibro: buscarLibro,
+    
+}
 module.exports = router;

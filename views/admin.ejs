@@ -12,6 +12,10 @@
                         <div>
                             <h3>Registro de libros</h3>
                             <div class="form-group row">
+                                <label for="" class="col-sm-2 col-form-label">ISBN</label>
+                                <div name="test" class="col-sm-4">
+                                    <input type="text" name="isbn" class="form-control" placeholder="Eje: 123565">
+                                </div>
                                 <label for="" class="col-sm-2 col-form-label">Nombre del Libro</label>
                                 <div name="test" class="col-sm-4">
                                     <input type="text" name="title" class="form-control" placeholder="Eje: Cien Años de soledad">
@@ -46,47 +50,54 @@
                     </form><br>
                 </div>
                 <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;"><br>
-                    <form>
+                    <form method="POST" action="/user/add-user">
                         <h3>Registro de Usuario</h3>
                         <div class="form-group row">
                             <label for="" class="col-sm-1 col-form-label">Nombre </label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" id="" placeholder="Gabriel">
+                                <input type="text" class="form-control" name="nombres" placeholder="Gabriel">
                             </div>
                             <label for="" class="col-sm-1 col-form-label">Apellido</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="" placeholder="Garcia Marquez">
+                                <input type="text" class="form-control" name="apellidos" placeholder="Garcia Marquez">
                             </div>
                         </div>
+                        
                         <div class="form-group row">
                             <label for="" class="col-sm-1 col-form-label">Cedula</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" id="" placeholder="10.000.000 Cc">
+                                <input type="text" class="form-control" name="documento" placeholder="10.000.000 Cc">
                             </div>
-                            <label for="" class="col-sm-2 col-form-label">Fecha de Registro</label>
+                            <label for="" class="col-sm-1 col-form-label">Celular</label>
                             <div class="col-sm-3">
-                                <input type="date" class="form-control" id="" placeholder="Eje..">
+                                <input type="text" class="form-control" name="celular" placeholder="312 345 6789">
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <label for="" class="col-sm-1 col-form-label">Correo</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="correo" placeholder="correo@correo.com">
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-outline-success">Registrar Usuario</button>
                     </form><br>
                 </div>
                 <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
                     <br>
-                    <h3>Prestamo de Libros</h3><br>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">Cedula Usuario</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="" placeholder="10.000.000 Cc">
+                    <form method="POST" action="/user/add-prestamo">
+                        <h3>Prestamo de Libros</h3><br>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Cedula Usuario</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="documento" placeholder="10.000.000 Cc">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Nombre del Libro o ISBN</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="isbn" placeholder="Gabriel Garcia Marquez">
+                            </div>
                         </div>
-                        <label for="" class="col-sm-2 col-form-label">Nombre del Libro</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="" placeholder="Gabriel Garcia Marquez">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-outline-success">Registrar Prestamo</button><br><br>
-
+                        <button type="submit" class="btn btn-outline-success">Registrar Prestamo</button><br><br>
+                    </form>
                 </div>
                 <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
                     <br>
