@@ -16,11 +16,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //RUTAS
 app.use('/admin', indexRouter);
-app.use('/user',rutaUser);
+
 app.use('/', shop);
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-
 app.listen(port, () => console.log(`Server Listen ${port}`));

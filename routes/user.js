@@ -1,15 +1,12 @@
 const express = require('express');
-const buscarLibro = require('./administrator');
+const { route } = require('./administrator');
 const router = express.Router();
+const users = [];
 
-const users = []
-
-router.get('/add-user', (req, res) => {
-    res.render('user', { title: 'USERS' })
-})
 
 router.post('/add-user', (req, res) => {
-    console.log("AQUI")
+    console.log("AQUI");
+
     users.push({
         nombres: req.body.nombres,
         apellidos: req.body.apellidos,
@@ -18,8 +15,8 @@ router.post('/add-user', (req, res) => {
         celular: req.body.celular,
         books: []
     })
-    console.log(users)
-    res.redirect('/')
+    console.log(users);
+    res.redirect('/admin');
 })
 
 router.post('/add-prestamo', (req, res) => {
@@ -27,8 +24,8 @@ router.post('/add-prestamo', (req, res) => {
     var isbn = req.body.isbn;
     var book = buscarLibro(isbn);
     //console.log(book);
-    if(user != null){
-        if(book != null){
+    if (user != null) {
+        if (book != null) {
             var librosUser = user.books;
             var fecha = new Date();
             librosUser.push({
@@ -38,17 +35,17 @@ router.post('/add-prestamo', (req, res) => {
             })
             console.log(users)
             res.redirect('/')
-        }else{
+        } else {
             console.log("No se encontró el libro");
         }
-    }else{
+    } else {
         console.log("No se encontró el usuario");
     }
 })
 
-function buscarUsuario(documento){
-    for(i = 0;i<users.length;i++){
-        if(users[i].documento == documento){
+function buscarUsuario(documento) {
+    for (i = 0; i < users.length; i++) {
+        if (users[i].documento == documento) {
             return user[i];
         }
     }

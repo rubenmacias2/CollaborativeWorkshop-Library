@@ -3,8 +3,8 @@
         <img src='img/libro.png' width="50" height="50" alt="" loading="lazy">&nbsp;&nbsp;Administrador
         <%- title %>
     </a>
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="Search">Buscar</button>
+    <form class="form-inline" method="POST" action="/search">
+        <input class="form-control" type="search" name="search"><a>&nbsp;&nbsp;</a>
+        <button class="btn btn-outline-light">Buscar</button><br><br>
     </form>
 </nav><br><br><br><br>

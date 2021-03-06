@@ -1,11 +1,26 @@
 const express = require('express');
 const { route } = require('./library');
-const router = express.Router();
+const data = require('./user');
+const users = [];
 
-const books = []
+const router = express.Router();
+const books = [];
 
 router.get('/add-book', (req, res) => {
     res.render('admin', { title: 'Biblioteca' })
+})
+
+router.post('/add-user', (req, res) => {
+    users.push({
+        nombres: req.body.nombres,
+        apellidos: req.body.apellidos,
+        documento: req.body.documento,
+        correo: req.body.correo,
+        celular: req.body.celular,
+        books: []
+    })
+
+    res.redirect('/admin');
 })
 
 router.post('/add-book', (req, res) => {
@@ -20,27 +35,25 @@ router.post('/add-book', (req, res) => {
         quantity: req.body.quantity
     })
 
-    console.log(books)
-    res.redirect('/')
+
+    res.redirect('/admin')
 })
 
 router.get('/', (req, res) => {
-    res.render('admin', { title: "Biblioteca" })
+    res.render('admin', { title: "Biblioteca", books: books, users: users })
+    console.log();
 });
 
-function buscarLibro(isbn){
-    for(i = 0;i<books.length;i++){
-        if(books[i].isbn == isbn || books[i].title == isbn){
+
+function buscarLibro(n1) {
+    for (i = 0; i < books.length; i++) {
+        if (books[i].isbn == n1) {
             return books[i];
         }
     }
     return null;
 }
-
-///module.exports.books = books;
-module.exports = {
-    books: books,
-    buscarLibro: buscarLibro,
-    
-}
+module.exports.buscar = buscarLibro;
+module.exports.users = users;
+module.exports.books = books;
 module.exports = router;

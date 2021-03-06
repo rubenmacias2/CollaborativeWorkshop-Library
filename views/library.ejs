@@ -6,12 +6,62 @@
 
     <body>
         <%- include('./componets/navBar.ejs')%>
-            <h1>hola</h1>
-
-
             <form method="GET" action="/admin">
                 <button>Iniciar admin</button>
             </form>
+            <div class="container">
+                <h3>Libros </h3><br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">isbn</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Editorial</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Unidades</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(const it of books){%>
+                            <tr>
+                                <th>
+                                    <a>
+                                        <%= it.isbn%>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a>
+                                        <%= it.title%>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a>
+                                        <%= it.author%>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a>
+                                        <%= it.editorial%>
+                                    </a>
+                                </th>
+                                <th>
+                                    <%= it.date%>
+                                </th>
+                                <th>
+                                    <%= it.value%>
+                                </th>
+                                <th>
+                                    <%= it.quantity > 0 %>
+                                </th>
+                            </tr>
+                            <%}%>
+
+
+                    </tbody>
+                </table>
+            </div><br>
     </body>
 
     <%- include('./componets/endHeader.ejs') %>
