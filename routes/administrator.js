@@ -56,7 +56,7 @@ router.post('/add-prestamo', (req, res) => {
                 console.log(users)
                 res.redirect('/')
             }else{
-                alert("Todos los libros de ese tipo han sido prestados");
+                console.log("Todos los libros de ese tipo han sido prestados");
             }
         } else {
             console.log("No se encontró el libro");

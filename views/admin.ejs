@@ -167,10 +167,9 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Documento</th>
+                                <th scope="col">ISBN</th>
+                                <th scope="col">Fecha Prestamo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -180,6 +179,16 @@
                                         <th>
                                             <a>
                                                 <%= it.documentoUser%>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a>
+                                                <%= it.isbn%>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a>
+                                                <%= it.fecha%>
                                             </a>
                                         </th>
                                     </tr>
