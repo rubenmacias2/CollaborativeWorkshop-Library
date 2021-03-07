@@ -5,6 +5,7 @@ const users = [];
 
 const router = express.Router();
 const books = [];
+var booksUser = [];
 
 router.get('/add-book', (req, res) => {
     res.render('admin', { title: 'Biblioteca' })
@@ -34,14 +35,50 @@ router.post('/add-book', (req, res) => {
         value: req.body.value,
         quantity: req.body.quantity
     })
-
-
     res.redirect('/admin')
 })
 
+router.post('/add-prestamo', (req, res) => {
+    var user = buscarUsuario(req.body.documento);
+    var isbn = req.body.isbn;
+    var book = buscarLibro(isbn);
+    if (user != null) {
+        if (book != null) {
+            if(book.quantity >= 1){
+                book.quantity = book.quantity - 1;
+                var librosUser = user.books;
+                var fecha = new Date();
+                librosUser.push({
+                    documentoUser: req.body.documento,
+                    isbn: req.body.isbn,
+                    fecha: fecha,
+                })
+                console.log(users)
+                res.redirect('/')
+            }else{
+                alert("Todos los libros de ese tipo han sido prestados");
+            }
+        } else {
+            console.log("No se encontró el libro");
+        }
+    } else {
+        console.log("No se encontró el usuario");
+    }
+})
+
+function buscarUsuario(documento) {
+    for (i = 0; i < users.length; i++) {
+        console.log(users[i].documento);
+        console.log(documento);
+        if (users[i].documento == documento) {
+            return users[i];
+        }
+    }
+    return null;
+}
+
 router.get('/', (req, res) => {
-    res.render('admin', { title: "Biblioteca", books: books, users: users })
-    console.log();
+    res.render('admin', { title: "Biblioteca", books: books, users: users , booksUser: booksUser})
 });
 
 
@@ -53,7 +90,21 @@ function buscarLibro(n1) {
     }
     return null;
 }
+
+router.post("/books-user", (req,res) => {
+    var documento = req.body.documento;
+    var user = buscarUsuario(documento);
+    if(user != null){
+        booksUser = user.books;
+        res.redirect('/admin')
+        console.log(booksUser)
+    }else{
+        console.log(documento);
+    }
+})
+
 module.exports.buscar = buscarLibro;
+module.exports.booksUser = booksUser;
 module.exports.users = users;
 module.exports.books = books;
 module.exports = router;
