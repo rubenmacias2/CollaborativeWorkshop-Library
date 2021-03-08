@@ -101,21 +101,6 @@ router.post('/devolver-prestamo', (req, res) => {
         console.log("No se encontró el usuario");
 
     }
-    /*if (user != null) {
-        if (book != null) {
-            book.quantity = book.quantity + 1;
-            librosUser = user.books;
-            console.log("AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "+librosUser.length);
-            //console.log(librosUser.indexOf(book));
-            //librosUser.splice(x,1);
-            //console.log(users)
-            res.redirect('/')
-        } else {
-            console.log("No se encontró el libro");
-        }
-    } else {
-        console.log("No se encontró el usuario");
-    }*/
 })
 
 
@@ -141,15 +126,12 @@ function buscarLibro(n1) {
     }
     return null;
 }
-
 router.post("/books-user", (req, res) => {
     var documento = req.body.documento;
     var user = buscarUsuario(documento);
     if (user != null) {
         booksUser = user.books;
         res.redirect('/admin');
-
-        //console.log(booksUser)
     } else {
         console.log(documento);
     }
