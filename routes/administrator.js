@@ -92,8 +92,6 @@ router.post('/devolver-prestamo',(req,res)=>{
                 if(book.isbn == user.books[i].isbn){
                     book.quantity = book.quantity +1;
                     user.books.splice(i,1);
-                    console.log("=====================")
-                    console.log(user.books.length);
                     res.redirect('/')
                 }
             }
