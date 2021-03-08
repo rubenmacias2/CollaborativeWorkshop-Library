@@ -2,16 +2,14 @@ const { resolveInclude } = require('ejs');
 const express = require('express');
 const { route } = require('./library');
 const data = require('./user');
-const users = [
-    {
-        nombres: "Jorge",
-        apellidos: "Acevedo",
-        documento: "0",
-        correo: "NoI",
-        celular: "300",
-        books: []
-    }
-];
+const users = [{
+    nombres: "Jorge",
+    apellidos: "Acevedo",
+    documento: "0",
+    correo: "NoI",
+    celular: "300",
+    books: []
+}];
 
 const router = express.Router();
 const books = [{
@@ -61,18 +59,18 @@ router.post('/add-prestamo', (req, res) => {
     var book = buscarLibro(isbn);
     if (user != null) {
         if (book != null) {
-            if(book.quantity >= 1){
+            if (book.quantity >= 1) {
                 book.quantity = book.quantity - 1;
                 var librosUser = user.books;
                 var fecha = new Date();
                 librosUser.push({
-                    documentoUser: req.body.documento,
-                    isbn: req.body.isbn,
-                    fecha: fecha,
-                })
-                //console.log(users)
-                res.redirect('/')
-            }else{
+                        documentoUser: req.body.documento,
+                        isbn: req.body.isbn,
+                        fecha: fecha,
+                    })
+                    //console.log(users)
+                res.redirect('/admin');
+            } else {
                 console.log("Todos los libros de ese tipo han sido prestados");
             }
         } else {
@@ -82,26 +80,26 @@ router.post('/add-prestamo', (req, res) => {
         console.log("No se encontró el usuario");
     }
 })
-router.post('/devolver-prestamo',(req,res)=>{
+router.post('/devolver-prestamo', (req, res) => {
     var user = buscarUsuario(req.body.documento);
     var isbn = req.body.isbn;
     if (user != null) {
-        if(user.books.length > 0){
+        if (user.books.length > 0) {
             var book = buscarLibro(isbn);
-            for(i = 0;i<user.books.length;i++){
-                if(book.isbn == user.books[i].isbn){
-                    book.quantity = book.quantity +1;
-                    user.books.splice(i,1);
-                    res.redirect('/')
+            for (i = 0; i < user.books.length; i++) {
+                if (book.isbn == user.books[i].isbn) {
+                    book.quantity = book.quantity + 1;
+                    user.books.splice(i, 1);
+                    res.redirect('/admin');
                 }
             }
-        }else{
+        } else {
             console.log("No tiene ningún libro en préstamo");
-            res.redirect('/')
+
         }
-    }else {
+    } else {
         console.log("No se encontró el usuario");
-        res.redirect('/')
+
     }
     /*if (user != null) {
         if (book != null) {
@@ -131,7 +129,7 @@ function buscarUsuario(documento) {
 }
 
 router.get('/', (req, res) => {
-    res.render('admin', { title: "Biblioteca", books: books, users: users , booksUser: booksUser})
+    res.render('admin', { title: "Biblioteca", books: books, users: users, booksUser: booksUser })
 });
 
 
@@ -144,19 +142,15 @@ function buscarLibro(n1) {
     return null;
 }
 
-router.post("/books-user", (req,res) => {
+router.post("/books-user", (req, res) => {
     var documento = req.body.documento;
     var user = buscarUsuario(documento);
-    if(user != null){
+    if (user != null) {
         booksUser = user.books;
-        res.json(
-            {
-                msg: "Se ha guardado exitosamente",
-            }
-        )
-        res.redirect('/admin')
+        res.redirect('/admin');
+
         //console.log(booksUser)
-    }else{
+    } else {
         console.log(documento);
     }
 })
