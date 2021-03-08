@@ -12,7 +12,7 @@ router.post('/search', (req, res) => {
 
 router.get('/', (req, res) => {
     res.render('library', { title: "Biblioteca", books: data.books })
-    console.log((data.users));
+    //console.log((data.users));
     //aqui se puede hacer la busqueda
     //console.log(data.buscar(1));
 

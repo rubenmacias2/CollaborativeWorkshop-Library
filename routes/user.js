@@ -15,7 +15,7 @@ router.post('/add-user', (req, res) => {
         celular: req.body.celular,
         books: []
     })
-    console.log(users);
+    //console.log(users);
     res.redirect('/admin');
 })
 
@@ -33,7 +33,7 @@ router.post('/add-prestamo', (req, res) => {
                 isbn: req.body.isbn,
                 fecha: fecha,
             })
-            console.log(users)
+            //console.log(users)
             res.redirect('/')
         } else {
             console.log("No se encontró el libro");

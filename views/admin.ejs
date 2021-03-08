@@ -86,7 +86,8 @@
                 <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
                     <br>
                     <form method="POST" action="/admin/add-prestamo">
-                        <h3>Prestamo de Libros</h3><br>
+                        <h2>Préstamo y devolución de Libros</h2><br>
+                        <h3>Préstamo</h3>
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">Cedula Usuario</label>
                             <div class="col-sm-3">
@@ -97,7 +98,21 @@
                                 <input type="text" class="form-control" name="isbn" placeholder="Gabriel Garcia Marquez">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-success">Registrar Prestamo</button><br><br>
+                        <button type="submit" class="btn btn-outline-success">Registrar Prestamo</button><br>
+                    </form><br>
+                    <form method="POST" action="/admin/devolver-prestamo">
+                        <h3>Devolución</h3>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Cedula Usuario</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="documento" placeholder="10.000.000 Cc">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Nombre del Libro o ISBN</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="isbn" placeholder="Gabriel Garcia Marquez">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-outline-success">Devolver libro</button><br><br>
                     </form>
                 </div>
                 <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
@@ -156,10 +171,14 @@
                         <div class="col-sm-3">
                             <h3>Libros del Usuario</h3>
                         </div>
-                        <div>
+                        <div class="col-sm-3"></div>
                             <form method="POST" action="/admin/books-user">
-                                <input class="form-control" type="text" name="documento" placeholder="Documento" onkeypress="">
-                                <button type="submit">Buscar</button>
+                                <div class="col-sm">
+                                    <input class="form-control" type="text" name="documento" placeholder="Documento" onkeypress="">
+                                </div>
+                                <div class="col-sm">
+                                    <button type="submit">Buscar</button>
+                                </div>
                             </form>
                         </div>
                     </div><br>
