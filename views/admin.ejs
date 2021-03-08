@@ -158,29 +158,29 @@
                                     </th>
 
                                 </tr>
-                            <%}%>
+                                <%}%>
 
                         </tbody>
                     </table><br>
                 </div>
-                <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
+                <div class="container">
                     <br>
                     <div class="form-group row">
                         <div class="col-sm-3">
                             <h3>Libros del Usuario</h3>
                         </div>
                         <div class="col-sm-3"></div>
-                            <form method="POST" action="/admin/books-user">
-                                <div class="col-sm">
-                                    <input class="form-control" type="text" name="documento" placeholder="Documento" onkeypress="">
-                                </div>
-                                <div class="col-sm">
-                                    <button type="submit" class="btn btn-outline-success">Buscar</button>
-                                </div>
-                            </form>
-                        </div>
+                        <form method="POST" action="/admin/books-user">
+                            <div class="col-sm">
+                                <input class="form-control" type="text" name="documento" placeholder="Documento" onkeypress="">
+                            </div>
+                            <div class="col-sm">
+                                <button type="submit" class="btn btn-outline-success">Buscar</button>
+                            </div>
+                        </form>
                     </div>
-                    
+                </div>
+                <div class="container" style="border-bottom: rgba(0, 0, 0, 0.432) solid 1px;">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -209,7 +209,7 @@
                                             </a>
                                         </th>
                                     </tr>
-                                <%}%>
+                                    <%}%>
                             </tr>
                         </tbody>
                     </table><br>
