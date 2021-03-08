@@ -56,28 +56,28 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-1 col-form-label">Nombre </label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="nombres" placeholder="Gabriel">
+                                <input type="text" required class="form-control" name="nombres" placeholder="Gabriel">
                             </div>
                             <label for="" class="col-sm-1 col-form-label">Apellido</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" name="apellidos" placeholder="Garcia Marquez">
+                                <input type="text" required class="form-control" name="apellidos" placeholder="Garcia Marquez">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="" class="col-sm-1 col-form-label">Cedula</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="documento" placeholder="10.000.000 Cc">
+                                <input type="text" required class="form-control" name="documento" placeholder="10.000.000 Cc">
                             </div>
                             <label for="" class="col-sm-1 col-form-label">Celular</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="celular" placeholder="312 345 6789">
+                                <input type="text" required class="form-control" name="celular" placeholder="312 345 6789">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-1 col-form-label">Correo</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="correo" placeholder="correo@correo.com">
+                                <input type="text" required class="form-control" name="correo" placeholder="correo@correo.com">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-outline-success">Registrar Usuario</button>
@@ -91,11 +91,11 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">Cedula Usuario</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="documento" placeholder="10.000.000 Cc">
+                                <input type="text" class="form-control" required name="documento" placeholder="10.000.000 Cc">
                             </div>
                             <label for="" class="col-sm-2 col-form-label">Nombre del Libro o ISBN</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="isbn" placeholder="Gabriel Garcia Marquez">
+                                <input type="text" required class="form-control" name="isbn" placeholder="Gabriel Garcia Marquez">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-outline-success">Registrar Prestamo</button><br>
@@ -105,11 +105,11 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">Cedula Usuario</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="documento" placeholder="10.000.000 Cc">
+                                <input type="text" required class="form-control" name="documento" placeholder="10.000.000 Cc">
                             </div>
                             <label for="" class="col-sm-2 col-form-label">Nombre del Libro o ISBN</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" name="isbn" placeholder="Gabriel Garcia Marquez">
+                                <input type="text" required class="form-control" name="isbn" placeholder="Gabriel Garcia Marquez">
                             </div>
                         </div>
                         <button type="submit" class="btn  btn-outline-danger">Devolver libro</button><br><br>
@@ -167,7 +167,7 @@
                     <br>
                     <h3>Libros del Usuario</h3>
                     <form method="POST" class="form-inline" action="/admin/books-user">
-                        <input class="form-control" type="text" name="documento" placeholder="Documento" onkeypress="">
+                        <input class="form-control" required type="text" name="documento" placeholder="Documento" onkeypress="">
                         <button type="submit" class="btn btn-outline-success">Buscar</button>
                     </form><br>
                 </div>
